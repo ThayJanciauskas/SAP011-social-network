@@ -1,0 +1,135 @@
+@font-face {
+  font-family: belleza;
+  src: url(Belleza-Regular.ttf);
+}
+
+body {
+  font-family: belleza;
+  height: 100vh;
+  margin: 0;
+  background-color: #ececec;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.description, .login {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  height: 100%;
+  width: 100%;
+  }
+
+.description {
+  margin-left: 70px;
+  height: auto;
+}
+
+.login {
+  background-color: rgba(93, 157, 189, 0.5);
+  border-radius: 40px;
+  margin-right: 70px;
+  margin-left: 10px;
+  height: auto;
+}
+
+#logo {
+  height: 350px;
+  width: 430px;
+}
+
+h1 {
+  font-size: 110px;
+  margin-bottom: 0px;
+  margin-top: 10px;
+}
+
+.phrase {
+  font-size:30px;
+  padding: 5px;
+  position: absolute;
+  top: 280px;
+}
+
+
+.title {
+  font-size: 25px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  
+}
+
+#password, #email {
+  border: none;
+  border-radius: 30px;
+  height: 35px;
+  width: 330px;
+  font-size: 15px;
+  margin: 10px;
+  background-color: #ececec;
+}
+
+label {
+  font-size: 25px;
+  align-self: flex-start;
+  margin-left: 120px;
+}
+
+#signUp, #register, #google {
+  border-radius: 20px;
+  margin: 10px;
+  padding: 10px;
+  width: 200px;
+  font-size: 22px;
+  border: none;
+  font-family: belleza;
+  background-color: #ececec;
+}
+.or {
+  font-size: 28px;
+  margin: 15px;
+}
+
+#signUp:hover, #register:hover, #google:hover, #password:hover, #email:hover {
+  background-color: #081922;
+  color: white;
+  cursor: pointer;
+}
+
+.footer {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 0px;
+  margin-top: 10px;
+}
+.linkedin {
+  display: inline-block;
+  width: 25px; 
+  height: 25px;
+  background-image: url('https://img.freepik.com/premium-vector/linkedin-logo_578229-227.jpg'); 
+  background-size: cover;
+  margin-left: 25px;
+  margin-right: 20px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+   
+.github {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-image: url('https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'); 
+  background-size: cover;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+   
