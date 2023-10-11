@@ -17,13 +17,15 @@ import customEditDialog from '../../func/customEditDialog.js';
 function feed(post, feedElement) {
   const postElement = document.createElement('section');
   postElement.classList.add('post');
+  postElement.setAttribute('dataPostId', post.id);
   const deleteBtn = post.uid === auth.currentUser.uid
     ? '<p class="deleteBtn" id="deleteBtn">Excluir</p>' : '';
   const editBtn = post.uid === auth.currentUser.uid
-    ? '<p class="e ditBtn" id="editBtn">Excluir</p>' : '';
+    ? '<p class="editBtn" id="editBtn">Editar</p>' : '';
   const content = `
       <section class='info'>
           <p class='name'>${post.username}</p>
+          <p class='name'>${post.text}</p>
       </section>
           <section class='container-edit'>
               ${editBtn}
@@ -42,16 +44,18 @@ function feed(post, feedElement) {
     });
   }
 
-  const btnEdit = postElement.querySelector(editBtn);
+  const btnEdit = postElement.querySelector('#editBtn');
   if (btnEdit) {
     btnEdit.addEventListener('click', () => {
       customEditDialog(post.text, (newText) => {
+        const postId = postElement.getAttribute('dataPostId');
         if (newText) {
-          editPost(post, newText)
+          editPost(postId, newText)
             .then(() => {
               const textElement = postElement.querySelector('.text');
               textElement.textContent = newText;
               post.text = newText;
+              window.location.reload();
             })
             .catch(() => {
               customAlert('Ops! Deu um erro aqui. Tenta de novo! :)');
@@ -102,13 +106,14 @@ export default () => {
   const send = container.querySelector('#send');
   send.addEventListener('click', () => {
     if (textArea.value !== '') {
-      createPost(auth.currentUser.displayName, textArea.value, auth.currentUser.uid)
+      createPost(textArea.value, auth.currentUser.uid, auth.currentUser.displayName)
         .then(() => {
           customAlert('Seu post foi publicado com sucesso');
           textArea.value = '';
           showFeed();
         })
         .catch(() => {
+          console.log('erro');
           customAlert('Erro ao publicar post');
         });
     } else {
@@ -118,8 +123,7 @@ export default () => {
 
   showFeed();
 
-  const buttonLogOut = container.querySelector('logout');
-  const buttonLogOutDesktop = container.querySelector('.logout');
+  const buttonLogOut = container.querySelector('#logout');
   const handleLogout = () => {
     customDialog('Deseja realmente sair?', () => {
       logOut()
@@ -132,6 +136,5 @@ export default () => {
     });
   };
   buttonLogOut.addEventListener('click', handleLogout);
-  buttonLogOutDesktop.addEventListener('click', handleLogout);
   return container;
 };

@@ -5,11 +5,14 @@ import { app } from './firebase';
 
 const db = getFirestore(app);
 
-export const createPost = (text, uid, username) => addDoc(collection(db, 'posts'), {
-  username,
-  text,
-  uid,
-});
+export const createPost = (text, uid, username) => {
+  console.log(uid);
+  return addDoc(collection(db, 'posts'), {
+    username,
+    text,
+    uid,
+  });
+};
 
 export const editPost = async (postId, newText) => {
   await updateDoc(doc(db, 'posts', postId), {
@@ -32,4 +35,5 @@ export const fetchPosts = async () => {
     post.id = firePost.id;
     posts.push(post);
   });
+  return posts;
 };
