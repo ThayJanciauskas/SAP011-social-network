@@ -8,15 +8,20 @@ body {
   height: 100vh;
   margin: 0;
   background-color: #ececec;
+  overflow: hidden;
 }
 
+/* login page */
+
 #bonVoyage {
+  margin-top: 1%;
   display: flex;
-  height: 100%;
+  height: 90vh;
   width: 100%;
 }
 
-.description, .login {
+.description,
+.login {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -25,22 +30,27 @@ body {
   text-align: left;
   height: 100%;
   width: 100%;
-  }
+}
 
 .description {
   margin-left: 70px;
   height: auto;
 }
 
-.login, .register {
+.login {
   background-color: rgba(93, 157, 189, 0.5);
   border-radius: 40px;
   margin-right: 70px;
   margin-left: 10px;
   height: auto;
+  margin-top: 3%;
+
+
 }
 
 #logo {
+  position: relative;
+  bottom: 120px;
   height: 350px;
   width: 430px;
 }
@@ -52,10 +62,10 @@ h1 {
 }
 
 .phrase {
-  font-size:30px;
+  font-size: 30px;
   padding: 5px;
   position: absolute;
-  top: 280px;
+  top: 360px;
 }
 
 
@@ -63,10 +73,11 @@ h1 {
   font-size: 25px;
   margin-top: 10px;
   margin-bottom: 30px;
-  
+
 }
 
-#password, #email {
+#password,
+#email {
   border: none;
   border-radius: 30px;
   height: 35px;
@@ -78,11 +89,12 @@ h1 {
 
 label {
   font-size: 25px;
-  align-self: flex-start;
-  margin-left: 120px;
+  margin-left: -27%
 }
 
-#signUp, #register, #google {
+#signUp,
+#register,
+#google {
   border-radius: 20px;
   margin: 10px;
   padding: 10px;
@@ -92,12 +104,17 @@ label {
   font-family: belleza;
   background-color: #ececec;
 }
+
 .or {
   font-size: 28px;
   margin: 15px;
 }
 
-#signUp:hover, #register:hover, #google:hover, #password:hover, #email:hover {
+#signUp:hover,
+#register:hover,
+#google:hover,
+#password:hover,
+#email:hover {
   background-color: #081922;
   color: white;
   cursor: pointer;
@@ -107,25 +124,26 @@ label {
   font-size: 20px;
   text-align: center;
   margin-bottom: 0px;
-  margin-top: 10px;
+  margin-top: 30px;
 }
+
 .linkedin {
   display: inline-block;
-  width: 25px; 
+  width: 25px;
   height: 25px;
-  background-image: url('https://img.freepik.com/premium-vector/linkedin-logo_578229-227.jpg'); 
+  background-image: url('https://img.freepik.com/premium-vector/linkedin-logo_578229-227.jpg');
   background-size: cover;
   margin-left: 25px;
   margin-right: 20px;
   margin-bottom: 0px;
   margin-top: 0px;
 }
-   
+
 .github {
   display: inline-block;
   width: 25px;
   height: 25px;
-  background-image: url('https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'); 
+  background-image: url('https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png');
   background-size: cover;
   margin-left: 20px;
   margin-right: 20px;
@@ -133,7 +151,7 @@ label {
   margin-top: 0px;
 }
 
-/* Login Page */
+/* dashboard Page */
 
 .menu {
   display: flex;
@@ -204,12 +222,12 @@ h2 {
 }
 
 .textArea::-webkit-scrollbar {
-  width: 13px; 
+  width: 13px;
 }
 
 .textArea::-webkit-scrollbar-thumb {
-  background-color: rgba(93, 157, 189, 0.5); 
-  border-radius: 6px; 
+  background-color: rgba(93, 157, 189, 0.5);
+  border-radius: 6px;
 }
 
 .textArea::-webkit-scrollbar-thumb:hover {
@@ -304,12 +322,12 @@ h2 {
 }
 
 .textArea::-webkit-scrollbar {
-  width: 13px; 
+  width: 13px;
 }
 
 .textArea::-webkit-scrollbar-thumb {
-  background-color: rgba(93, 157, 189, 0.5); 
-  border-radius: 6px; 
+  background-color: rgba(93, 157, 189, 0.5);
+  border-radius: 6px;
 }
 
 .textArea::-webkit-scrollbar-thumb:hover {
@@ -365,93 +383,155 @@ h2 {
   margin-top: 0px;
 }
 
-/* Responsive */ 
+/* Responsive dashbord page */
 
 @media (max-width: 768px) {
 
   .menu {
-      color: #000000;
-      padding: 20px;
-      display: flex;
-      flex-wrap: wrap;
+    color: #000000;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .feed {
-      display: flex;
-      align-content: center;
-      justify-content: center;
+    display: flex;
+    align-content: center;
+    justify-content: center;
   }
 
   .footer {
-      color: #000000;
-      text-align: center;
-      padding: 10px;
+    color: #000000;
+    text-align: center;
+    padding: 10px;
   }
 
   .textArea {
-      width: 90%;
-      border-radius: 10px;
-      
+    width: 90%;
+    border-radius: 10px;
+
   }
-  
+
   .postArea {
-      width: 90%;
-      border-radius: 20px;
-      margin: 0;
+    width: 90%;
+    border-radius: 20px;
+    margin: 0;
   }
 
   .send {
-      margin-top: 10px;
+    margin-top: 10px;
   }
 
   h2 {
-      font-size: 10vw;
-      margin: 0;
-      align-self: center;
-      order: 1;
-      margin-right: 8%;
-      font-weight: 100;
+    font-size: 10vw;
+    margin: 0;
+    align-self: center;
+    order: 1;
+    margin-right: 8%;
+    font-weight: 100;
 
   }
 
   #welcome {
-      text-align: center;
-      font-size: 5.2vw;
-      padding: 2vw;
-      order: 3;
-      flex-wrap: wrap;
+    text-align: center;
+    font-size: 5.2vw;
+    padding: 2vw;
+    order: 3;
+    flex-wrap: wrap;
   }
 
   #logoo {
-      position: relative;
-      margin-top: 30px;
-      order: 0;
-      width: auto;
-      height: 40%;
-      margin-left: 5%;
+    position: relative;
+    margin-top: 30px;
+    order: 0;
+    width: auto;
+    height: 40%;
+    margin-left: 5%;
 
 
   }
 
   .logout {
-      position: relative;
-      order: 4;
-      margin-right: 1%;
-      text-align: center;
-      font-size: 5.2vw;
-      padding: 2vw;
+    position: relative;
+    order: 4;
+    margin-right: 1%;
+    text-align: center;
+    font-size: 5.2vw;
+    padding: 2vw;
   }
 
   body::-webkit-scrollbar {
-      width: 13px; 
+    width: 13px;
   }
-  
+
   body::-webkit-scrollbar-thumb {
-      background-color: rgba(93, 157, 189, 0.5); 
-      border-radius: 6px; 
+    background-color: rgba(93, 157, 189, 0.5);
+    border-radius: 6px;
   }
-  
+
   body::-webkit-scrollbar-thumb:hover {
-      background-color: #303466;
+    background-color: #303466;
+  }
+}
+
+/*Responsivo do Login*/
+
+@media (max-width: 768px) {
+  #bonVoyage {
+    margin-top: 0.5%;
+    display: flex;
+    height: 90vh;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .description,
+  .login {
+    justify-content: center;
+    text-align: left;
+    height: 100%;
+    width: 100%;
+  }
+
+  .description {
+    order: 0;
+  }
+
+  .login {
+    order: 1;
+  }
+
+  #logo {
+    margin-left: -27%;
+    width: 40%;
+    height: 40%;
+    margin-top: -110px;
+  }
+
+  h1 {
+    margin-top: -35%;
+    font-size: 300%;
+    margin-left: -27%;
+    font-weight: 100;
+  }
+
+  .title {
+    margin-left: -33%;
+    font-size: 110%;
+  }
+
+  .phrase {
+    display: none;
+  }
+
+  .login {
+  width: 95%;
+  margin-top: -50%;
+
+  }
+
+  label {
+    margin-left: -230px;
   }
 }
