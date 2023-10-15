@@ -32,7 +32,7 @@ body {
   height: auto;
 }
 
-.login {
+.login, .register {
   background-color: rgba(93, 157, 189, 0.5);
   border-radius: 40px;
   margin-right: 70px;

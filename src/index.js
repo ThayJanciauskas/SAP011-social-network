@@ -1,5 +1,8 @@
+// import { onAuthStateChanged } from 'firebase/auth';
 import login from './pages/login/login.js';
 import dashboard from './pages/dashboard/dashboard.js';
+import registerContainer from './pages/login/newuser.js';
+// import { auth } from './Firebase/firebaseauth.js';
 
 const main = document.querySelector('#root');
 
@@ -13,6 +16,10 @@ const init = () => {
 
       case '#dashboard':
         main.appendChild(dashboard());
+        break;
+
+      case '#register':
+        main.appendChild(registerContainer());
         break;
 
       default:

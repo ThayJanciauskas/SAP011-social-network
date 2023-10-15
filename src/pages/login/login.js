@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import { login } from '../../Firebase/firebaseauth.js';
 
 export default () => {
@@ -48,5 +49,9 @@ export default () => {
       });
   });
 
+  const newAccountBtn = container.querySelector('#register');
+  newAccountBtn.addEventListener('click', () => {
+    window.location.hash = '#register';
+  });
   return container;
 };

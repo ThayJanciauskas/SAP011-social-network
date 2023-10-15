@@ -37,3 +37,10 @@ export const fetchPosts = async () => {
   });
   return posts;
 };
+export const userData = (
+  name,
+  email,
+) => addDoc(collection(db, 'infos-add'), {
+  name,
+  email,
+});
