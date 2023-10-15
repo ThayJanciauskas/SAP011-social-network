@@ -8,10 +8,9 @@ import { app } from './firebase.js';
 export const auth = getAuth(app);
 
 // create new users
-export const newUser = (email, password) => createUserWithEmailAndPassword(auth, email, password).then(async (userCredential) => {
-  const user = userCredential.user;
-  return updateProfile(user);
-});
+export function newUser(email, password) {
+  return createUserWithEmailAndPassword(auth, email, password);
+}
 
 // Login
 export const login = (email, password) => signInWithEmailAndPassword(auth, email, password);
