@@ -7,6 +7,7 @@ import {
 import {
   auth,
   logOut,
+  displayName,
 }
   from '../../Firebase/firebaseauth.js';
 import customAlert from '../../func/customAlert.js';
@@ -55,7 +56,6 @@ function feed(post, feedElement) {
               const textElement = postElement.querySelector('.text');
               textElement.textContent = newText;
               post.text = newText;
-              window.location.reload();
             })
             .catch(() => {
               customAlert('Ops! Deu um erro aqui. Tenta de novo! :)');
@@ -84,23 +84,25 @@ export default () => {
   container.classList.add('dashContainer');
 
   const dashboard = `
-<section class="all">
-<nav class="menu">
+  <section class="all">
+    <nav class="menu">
      <h2> Bon Voyage.</h2>
      <img src="logo-bon-voyage.png" id="logoo">
-     <p id="welcome"> Olá, </p>
+     <p id="welcome"> Olá, <span id="user"></span> :) </p>
      <button class="logout" id="logout">Logout</button>
-</nav>
+    </nav>
   
-<main class="feed">
+    <main class="feed">
      <section class="postArea" id="postArea">
      <textarea id="textArea" class="textArea" rows="4" cols="50"></textarea>
      <button class="send" id="send">Enviar</button>
      </section>
-</main>
-</section>
-`;
+    </main>
+  </section>
+  `;
   container.innerHTML = dashboard;
+
+  container.querySelector('#user').innerHTML = displayName();
 
   const textArea = container.querySelector('#textArea');
   const send = container.querySelector('#send');
@@ -113,7 +115,6 @@ export default () => {
           showFeed();
         })
         .catch(() => {
-          console.log('erro');
           customAlert('Erro ao publicar post');
         });
     } else {
